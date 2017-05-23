@@ -4,6 +4,10 @@ body {
   background-color: #fc6;
 }
 
+h1 {
+  font-family: 'Knewave', cursive;
+}
+
 #top-bar {
   margin-top: 28px;
 }
@@ -65,4 +69,8 @@ body {
 
 h1 {
   color: #f30;
+}
+
+#hamburger_img {
+  max-height: 150px;
 }
