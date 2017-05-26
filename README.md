@@ -12,3 +12,19 @@
 
 2. Remove old files such as ORM.js and any references to it in burgers_controller.js 
 
+
+## Technologies Used 
+
+- Sequelize 
+- Node.js, Express, 
+- MySQL Workbench
+- Handlebars 
+
+## Code Explanation 
+
+A connection to the MySQL database is created with Sequelize in the config/connection.js. The connection is then exported and required in model/burger.js where the data is defined and given datatypes in our MySQL database. 
+
+The burgers_controller.js file is where the routes are defined.  
+
+Sequelize methods such as findAll(), create(), and update() replaced the previous vanilla MySQL queries. 
+
