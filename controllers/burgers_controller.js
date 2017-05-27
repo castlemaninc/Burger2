@@ -20,8 +20,8 @@ router.get("/api/all", function(req,res){
 // get all the burgers in the database and render the index.handlebars page 
 router.get("/burgers", function(req,res){
   burger.findAll({}).then(function(data){
-    var hbsObject = {burgers : data};
-    res.render("index", hbsObject);
+    var hbsObject = {"burgers" : "data"};
+    res.render("index", hbsObject);    
   });
 });
 
