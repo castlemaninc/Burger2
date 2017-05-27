@@ -5,11 +5,11 @@ var Sequelize = require("sequelize");
 var sequelize = new Sequelize("burgers_db","root","mysql99", {
 	host: "localhost",
 	dialect: "mysql",
-	// pool: {		
-	// 	max:5,
-	// 	min:0,
-	// 	idle: 10000
-	// }
+	pool: {		
+		max:5,
+		min:0,
+		idle: 10000
+	}
 });
 
 // exports the connection for other files to use
