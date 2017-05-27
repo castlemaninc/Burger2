@@ -4,9 +4,6 @@ var burger = require("../models/burger");
 var bodyParser = require("body-parser");
 
 
-
-
-
 // show all the burger data in the database 
 router.get("/api/all", function(req,res){
   burger.findAll({}).then(function(results){
