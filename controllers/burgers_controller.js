@@ -4,18 +4,15 @@ var burger = require("../models/burger");
 var bodyParser = require("body-parser");
 
 
-// get route -> index
-router.get("/", function(req, res) {
-  res.redirect("/burgers");
-});
+
 
 
 // show all the burger data in the database 
 router.get("/api/all", function(req,res){
   burger.findAll({}).then(function(results){
     res.json(results);
-  })
-})
+  });
+});
 
 // get all the burgers in the database and render the index.handlebars page 
 router.get("/burgers", function(req,res){
@@ -23,6 +20,11 @@ router.get("/burgers", function(req,res){
     var hbsObject = {burgers : data};
     res.render("index", hbsObject);    
   });
+});
+
+// get route -> index
+router.get("/", function(req, res) {
+  res.redirect("/burgers");
 });
 
 // post route -> back to index
