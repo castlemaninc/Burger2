@@ -5,8 +5,11 @@ var Sequelize = require("sequelize");
 
 var port = process.env.PORT || 3000;
 
+
 // Requiring our models for syncing
 var db = require("./models");
+
+db.burgers.sync();
 
 var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
