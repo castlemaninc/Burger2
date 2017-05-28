@@ -23,7 +23,7 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-	var Burger = sequelize.define("Burger", {
+	var burgers = sequelize.define("burgers", {
     
 	    id: {
 		    type: DataTypes.INTEGER,
@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 	    }
   });
-	
-  return Burger;
+
+  return burgers;
 };
 

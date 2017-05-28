@@ -6,14 +6,14 @@ var bodyParser = require("body-parser");
 
 // show all the burger data in the database 
 router.get("/api/all", function(req,res){
-  db.burgers.findAll({}).then(function(results){
+  db.burgers.findAll().then(function(results){
     res.json(results);
   });
 });
 
 // get all the burgers in the database and render the index.handlebars page 
 router.get("/burgers", function(req,res){
-  db.burgers.findAll({}).then(function(data){
+  db.burgers.findAll().then(function(data){
     var hbsObject = {burgers : data};
     res.render("index", hbsObject);    
   });
