@@ -17,28 +17,31 @@
 // });
 
 
-// Burger.sync();
+
 
 // module.exports = Burger;
 
+
 module.exports = function(sequelize, DataTypes) {
-  var Burger = sequelize.define("Burger", {
-    // Giving the Author model a name of type STRING
-    id: {
-	    type: Sequelize.INTEGER,
-	    autoIncrement: true,
-	    primaryKey: true
-	},
-		burger_name: Sequelize.STRING,
-		devoured: Sequelize.BOOLEAN
+	var Burger = sequelize.define("Burger", {
+    
+	    id: {
+		    type: DataTypes.INTEGER,
+		    autoIncrement: true,
+		    primaryKey: true
+		}, 
+		burger_name: DataTypes.STRING,
+		devoured: DataTypes.BOOLEAN
 	}, {
 		timestamps: false
 	}, {
 	    classMethods: {
-	      associate: function(models) {
-        // associations can be defined here
-      }
-    }
+			associate: function(models) {
+	        // associations can be defined here
+			}
+	    }
   });
-  return burger;
+	
+  return Burger;
 };
+

@@ -1,19 +1,19 @@
 var express = require("express");
 var router = express.Router();
-var burger = require("../models/burger");
+var db = require("../models");
 var bodyParser = require("body-parser");
 
 
 // show all the burger data in the database 
 router.get("/api/all", function(req,res){
-  burger.findAll({}).then(function(results){
+  db.burgers.findAll({}).then(function(results){
     res.json(results);
   });
 });
 
 // get all the burgers in the database and render the index.handlebars page 
 router.get("/burgers", function(req,res){
-  burger.findAll({}).then(function(data){
+  db.burgers.findAll({}).then(function(data){
     var hbsObject = {burgers : data};
     res.render("index", hbsObject);    
   });
@@ -26,7 +26,7 @@ router.get("/", function(req, res) {
 
 // post route -> back to index
 router.post("/burgers/create", function(req,res){
-  burger.create({
+  db.burgers.create({
     burger_name : req.body.burger_name,
     devoured : false
     }).then(function(result){
@@ -41,7 +41,7 @@ router.put("/burgers/update", function(req,res){
   var eaten = {
     devoured : 1
   }
-  burger.update(eaten,{
+  db.burgers.update(eaten,{
 
     where : {
       id : req.body.burger_id
@@ -53,6 +53,8 @@ router.put("/burgers/update", function(req,res){
 
 });
   
+
+
 
 module.exports = router;
 
